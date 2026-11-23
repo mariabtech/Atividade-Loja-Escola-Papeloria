@@ -1,0 +1,623 @@
+/* ==========================================================================
+   PAPELORIA — Identidade Visual & Estilos Customizados
+   Paleta:
+   - Aubergine:     #3c0912
+   - Zombie:        #e8d99c
+   - Apple Blossom: #a94846
+   - Mauvelous:     #ee95ac
+   Tipografia: Montserrat (Títulos), Poppins (Subtítulos), Lato (Corpo)
+   ========================================================================== */
+
+:root {
+  /* Paleta Principal */
+  --color-aubergine: #3c0912;
+  --color-aubergine-light: #59121f;
+  --color-zombie: #e8d99c;
+  --color-zombie-soft: #f7f1d5;
+  --color-zombie-tint: #fcf9ed;
+  --color-apple: #a94846;
+  --color-apple-dark: #883533;
+  --color-mauvelous: #ee95ac;
+  --color-mauvelous-soft: #fad8e1;
+
+  /* Neutros e Semânticos */
+  --color-white: #ffffff;
+  --color-ink: #2b070e;
+  --color-muted: #5f3a41;
+  --color-border: #dfd0a8;
+  --color-success-bg: #e6f4ea;
+  --color-success-ink: #14532d;
+  --color-error-bg: #fde8e8;
+  --color-error-ink: #881313;
+
+  /* Tipografia */
+  --font-heading: "Montserrat", sans-serif;
+  --font-subheading: "Poppins", sans-serif;
+  --font-body: "Lato", sans-serif;
+
+  /* Padrões de UI */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --shadow-sm: 0 4px 12px rgba(60, 9, 18, 0.06);
+  --shadow-md: 0 10px 24px rgba(60, 9, 18, 0.12);
+  --transition-base: 0.2s ease;
+}
+
+/* Base & Tipografia */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-zombie-tint);
+  line-height: 1.6;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+h1, .h1 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--color-aubergine);
+  letter-spacing: -0.02em;
+}
+
+h2, .h2, h3, .h3, h4, .h4, legend {
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  color: var(--color-aubergine);
+}
+
+/* Acessibilidade: Skip link e Focus Visible */
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 1rem;
+  z-index: 1050;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-aubergine);
+  color: var(--color-zombie);
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  border: 2px solid var(--color-zombie);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-apple);
+  outline-offset: 3px;
+}
+
+/* Cabeçalho & Navegação */
+/* ==========================================================================
+   Cabeçalho Estilo E-commerce (Inspirado na Referência + Paleta Papeloria)
+   ========================================================================== */
+.site-header {
+  background-color: var(--color-aubergine);
+  color: var(--color-white);
+  border-bottom: 3px solid var(--color-apple);
+  box-shadow: var(--shadow-md);
+}
+
+.header-toggler {
+  border-color: var(--color-zombie);
+  background-color: var(--color-zombie);
+}
+
+.header-action-item {
+  color: var(--color-white);
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.header-action-item:hover {
+  background-color: var(--color-aubergine-light);
+  color: var(--color-zombie);
+}
+
+.header-subtext {
+  font-size: 0.74rem;
+  color: var(--color-zombie);
+}
+
+.header-maintext {
+  font-family: var(--font-subheading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.header-link-small {
+  font-size: 0.76rem;
+  color: var(--color-zombie-soft);
+  text-decoration: none;
+  line-height: 1.45;
+}
+
+.header-link-small:hover {
+  color: var(--color-mauvelous);
+  text-decoration: underline;
+}
+
+.header-search-form {
+  max-width: 520px;
+}
+
+.header-search-input {
+  border: none;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm) !important;
+  min-height: 44px;
+  font-size: 0.92rem;
+}
+
+.header-search-btn {
+  background-color: var(--color-apple);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+  min-width: 50px;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  transition: background-color var(--transition-base);
+}
+
+.header-search-btn:hover {
+  background-color: var(--color-mauvelous);
+  color: var(--color-aubergine);
+}
+
+.header-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--color-mauvelous);
+  color: var(--color-aubergine);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+}
+
+.brand-logo {
+  height: 54px;
+  width: auto;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.navbar-brand:hover .brand-logo {
+  transform: scale(1.03);
+}
+
+.nav-link {
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  color: var(--color-aubergine);
+  padding: 0.6rem 1rem !important;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.nav-link:hover {
+  background-color: var(--color-zombie-soft);
+  color: var(--color-apple);
+}
+
+.nav-link.active {
+  background-color: var(--color-aubergine);
+  color: var(--color-zombie) !important;
+}
+
+.cart-badge {
+  background-color: var(--color-apple);
+  color: var(--color-white);
+  font-family: var(--font-subheading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-left: 0.35rem;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--color-zombie-soft) 0%, var(--color-mauvelous-soft) 100%);
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-subheading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-aubergine);
+  background-color: var(--color-zombie);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* Botões Customizados */
+.btn-papeloria {
+  background-color: var(--color-aubergine);
+  color: var(--color-zombie);
+  border: 2px solid var(--color-aubergine);
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition-base);
+}
+
+.btn-papeloria:hover {
+  background-color: var(--color-apple);
+  border-color: var(--color-apple);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.btn-papeloria:active {
+  background-color: var(--color-apple-dark);
+  transform: translateY(0);
+}
+
+.btn-papeloria:disabled {
+  background-color: #9e8a8e;
+  border-color: #9e8a8e;
+  color: #f3ecee;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-papeloria-outline {
+  background-color: var(--color-white);
+  color: var(--color-aubergine);
+  border: 2px solid var(--color-aubergine);
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  padding: 0.625rem 1.15rem;
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all var(--transition-base);
+}
+
+.btn-papeloria-outline:hover {
+  background-color: var(--color-mauvelous-soft);
+  border-color: var(--color-apple);
+  color: var(--color-aubergine);
+}
+
+/* Barra de Filtros */
+.filter-panel {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Cartões de Produto */
+.product-card {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-mauvelous);
+}
+
+.product-illustration,
+.product-detail-illustration {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at center, var(--color-white) 0%, var(--color-zombie-soft) 100%);
+  border-bottom: 2px solid var(--color-border);
+  padding: 1.25rem;
+}
+
+.product-illustration {
+  min-height: 200px;
+}
+
+.product-illustration svg {
+  width: 140px;
+  height: 140px;
+}
+
+.product-detail-illustration {
+  min-height: 380px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.product-detail-illustration svg {
+  width: 260px;
+  height: 260px;
+}
+
+.rule-badge {
+  display: inline-block;
+  background-color: var(--color-mauvelous-soft);
+  color: var(--color-aubergine);
+  border: 1px solid var(--color-mauvelous);
+  font-family: var(--font-subheading);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.category-tag {
+  font-family: var(--font-subheading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-apple);
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-aubergine);
+}
+
+.price-large {
+  font-size: 2.15rem;
+}
+
+/* Formulários e Campos */
+.form-label {
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  color: var(--color-aubergine);
+  font-size: 0.92rem;
+}
+
+.form-control,
+.form-select {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+  color: var(--color-ink);
+  background-color: var(--color-white);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-apple);
+  box-shadow: 0 0 0 0.2rem rgba(169, 72, 70, 0.2);
+}
+
+.quantity-field {
+  max-width: 110px;
+}
+
+/* Especificações Técnicas do Produto */
+.specs-box {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+/* Checkout & Resumo */
+.checkout-fieldset {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.summary-box {
+  padding: 1.5rem;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-aubergine);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 1.25rem;
+}
+
+.cart-item-row {
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.qty-mini-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--color-aubergine);
+  background-color: var(--color-zombie-soft);
+  color: var(--color-aubergine);
+  font-weight: 700;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-mini-btn:hover {
+  background-color: var(--color-aubergine);
+  color: var(--color-zombie);
+}
+
+/* Feedback Visual (Sucesso / Erro / Carregando) */
+.feedback-banner {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.feedback-banner:empty {
+  display: none;
+}
+
+.feedback-success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-ink);
+  border: 1px solid #86efac;
+}
+
+.feedback-error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error-ink);
+  border: 1px solid #fca5a5;
+}
+
+.feedback-loading {
+  background-color: var(--color-zombie-soft);
+  color: var(--color-aubergine);
+  border: 1px solid var(--color-zombie);
+}
+
+/* Página de Sucesso */
+.success-panel {
+  max-width: 740px;
+  padding: 2.75rem 1.75rem;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.success-icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background-color: var(--color-zombie);
+  border: 3px solid var(--color-aubergine);
+  color: var(--color-aubergine);
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.order-data {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.order-data > div {
+  padding: 1rem 1.15rem;
+  background-color: var(--color-zombie-tint);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.order-data dt {
+  font-size: 0.82rem;
+  font-family: var(--font-subheading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+}
+
+.order-data dd {
+  margin: 0.25rem 0 0;
+  font-weight: 700;
+  color: var(--color-aubergine);
+  word-break: break-word;
+}
+
+/* Rodapé */
+.site-footer {
+  margin-top: 4rem;
+  background-color: var(--color-aubergine);
+  color: var(--color-zombie-soft);
+  border-top: 4px solid var(--color-apple);
+}
+
+.site-footer a {
+  color: var(--color-zombie);
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: var(--color-mauvelous);
+}
+
+/* Respeito à preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .product-card:hover,
+  .btn-papeloria:hover,
+  .navbar-brand:hover .brand-logo {
+    transform: none;
+  }
+}
+
+/* Ajustes para telas estreitas */
+@media (max-width: 575.98px) {
+  .brand-logo {
+    height: 44px;
+  }
+
+  .product-detail-illustration {
+    min-height: 260px;
+  }
+
+  .product-detail-illustration svg {
+    width: 180px;
+    height: 180px;
+  }
+
+  .price-large {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Confirmação do pedido realizado na Papeloria.">
+  <title>Papeloria | Compra Concluída</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-xl py-2" aria-label="Navegação principal">
+      <div class="container-fluid px-lg-4 gap-3">
+        <!-- Logo Papeloria -->
+        <a class="navbar-brand m-0" href="index.html" aria-label="Papeloria - Página inicial">
+          <img src="assets/papeloria_logo_melhorada.svg" alt="Logotipo da Papeloria" class="brand-logo" width="160" height="48">
+        </a>
+
+        <!-- Botão Menu Mobile -->
+        <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse gap-3 mt-3 mt-xl-0" id="menuPrincipal">
+          <!-- Endereço de entrega (atualizado dinamicamente após busca de CEP) -->
+          <a href="checkout.html#cep" class="header-action-item d-flex align-items-center gap-2 text-decoration-none">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div class="lh-sm">
+              <span class="d-block header-subtext">Enviar para</span>
+              <strong class="header-maintext" data-header-endereco>Endereço de entrega</strong>
+            </div>
+          </a>
+
+          <!-- Barra de Pesquisa Central -->
+          <form class="header-search-form flex-grow-1 my-2 my-xl-0" role="search" action="index.html#vitrine">
+            <label for="buscaHeader" class="visually-hidden">Digite aqui o que você procura</label>
+            <div class="input-group">
+              <input id="buscaHeader" type="search" class="form-control header-search-input" placeholder="Digite aqui o que você procura" autocomplete="off">
+              <button class="btn header-search-btn" type="submit" aria-label="Buscar produtos">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Links Institucionais & Usuário -->
+          <div class="d-flex flex-wrap align-items-center gap-3 gap-xl-4">
+            <div class="lh-sm d-none d-xxl-block">
+              <a href="#topo" class="d-block header-link-small">Nossas Lojas</a>
+              <a href="#topo" class="d-block header-link-small">Atendimento</a>
+            </div>
+
+            <!-- Saudação do Cliente (atualizada dinamicamente com o nome digitado) -->
+            <a href="checkout.html#nome" class="header-action-item d-flex align-items-center gap-2 text-decoration-none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+              </svg>
+              <div class="lh-sm">
+                <span class="d-block header-subtext" data-header-usuario>Olá, Inventor</span>
+                <strong class="header-maintext">LOGIN / CADASTRO ▾</strong>
+              </div>
+            </a>
+
+            <!-- Busca Temática -->
+            <a href="index.html#vitrine" class="header-action-item lh-sm text-decoration-none d-none d-lg-block">
+              <span class="d-block header-subtext">Busca de</span>
+              <strong class="header-maintext">INVENTOS ÚNICOS</strong>
+            </a>
+
+            <!-- Pedidos e Trocas -->
+            <a href="sucesso.html" class="header-action-item d-flex align-items-center gap-2 text-decoration-none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="9" y1="12" x2="15" y2="12"></line>
+                <line x1="9" y1="16" x2="13" y2="16"></line>
+              </svg>
+              <div class="lh-sm">
+                <strong class="d-block header-maintext">PEDIDOS</strong>
+                <span class="header-subtext">e Trocas</span>
+              </div>
+            </a>
+
+            <!-- Carrinho -->
+            <a href="checkout.html" class="header-action-item d-flex align-items-center gap-2 text-decoration-none position-relative" aria-label="Ir para o carrinho">
+              <div class="position-relative">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                <span class="cart-badge header-cart-badge" data-cart-count>0</span>
+              </div>
+              <strong class="header-maintext">CARRINHO</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="container py-5">
+    <section id="painelSucesso" class="success-panel mx-auto text-center" aria-labelledby="titulo-sucesso">
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <p class="eyebrow mb-2">Pedido Simulado Concluído</p>
+      <h1 id="titulo-sucesso" class="mb-3">Compra concluída com sucesso!</h1>
+      <p class="lead" id="mensagemCliente"></p>
+
+      <dl class="order-data">
+        <div>
+          <dt>Número do pedido</dt>
+          <dd id="numeroPedido">-</dd>
+        </div>
+        <div>
+          <dt>Destino</dt>
+          <dd id="destinoPedido">-</dd>
+        </div>
+        <div>
+          <dt>Pagamento</dt>
+          <dd id="pagamentoPedido">-</dd>
+        </div>
+        <div>
+          <dt>Total pago</dt>
+          <dd id="totalPedido">-</dd>
+        </div>
+      </dl>
+
+      <div class="text-start specs-box mb-4">
+        <h2 class="h5 mb-3">Itens do pedido</h2>
+        <ul id="itensPedidoSucesso" class="list-unstyled mb-0"></ul>
+      </div>
+
+      <a class="btn btn-papeloria btn-lg" href="index.html">Voltar para a Papeloria</a>
+    </section>
+  </main>
+
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <!-- Coluna 1: Logo e Redes Sociais -->
+        <div class="col-12 col-lg-3">
+          <a href="index.html" class="d-inline-block mb-3" aria-label="Papeloria - Voltar ao início">
+            <img src="assets/papeloria_logo_melhorada.svg" alt="Logotipo da Papeloria" class="footer-logo" width="165" height="50">
+          </a>
+          <p class="footer-heading mb-2">SIGA A PAPELORIA</p>
+          <ul class="list-unstyled d-flex align-items-center gap-3 mb-0">
+            <li>
+              <a href="#topo" class="social-link" aria-label="X (Twitter) da Papeloria">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#topo" class="social-link" aria-label="Instagram da Papeloria">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#topo" class="social-link" aria-label="Facebook da Papeloria">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#topo" class="social-link" aria-label="YouTube da Papeloria">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#topo" class="social-link" aria-label="TikTok da Papeloria">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Coluna 2: A Loja -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <h2 class="footer-heading">A PAPELORIA</h2>
+          <ul class="list-unstyled footer-links">
+            <li><a href="index.html">Nossa Vitrine</a></li>
+            <li><a href="index.html#vitrine">Nossas Criações</a></li>
+            <li><a href="#topo">Laboratório de Ideias</a></li>
+            <li><a href="#topo">Arte & Design</a></li>
+            <li><a href="checkout.html">Fale Conosco</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Compromissos -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <h2 class="footer-heading">COMPROMISSOS</h2>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#topo">Fundação Papeloria</a></li>
+            <li><a href="#topo">Educação & Sonhos</a></li>
+            <li><a href="#topo">Grafite Sustentável</a></li>
+            <li><a href="#topo">Acessibilidade Web</a></li>
+            <li><a href="#topo">Escrevendo o Futuro</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Carreiras -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <h2 class="footer-heading">CARREIRAS</h2>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#topo">Trabalhe Conosco</a></li>
+            <li><a href="#topo">Inventores Residentes</a></li>
+            <li><a href="#topo">Estágio Espacial</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 5: Catálogo & Novidades -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h2 class="footer-heading">CATÁLOGO</h2>
+          <ul class="list-unstyled footer-links">
+            <li><a href="produto.html?id=1">Linha de Bolso</a></li>
+            <li><a href="produto.html?id=3">Linha Orbital</a></li>
+            <li><a href="produto.html?id=4">Micro-Papelaria</a></li>
+            <li><a href="produto.html?id=5">Escala Colossal</a></li>
+            <li><a href="checkout.html">Meu Carrinho</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider my-4">
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small footer-bottom">
+        <p class="mb-0">© 2026 Papeloria · Loja de Inventos Inéditos (Projeto educacional).</p>
+        <p class="mb-0">Sem cobranças reais · Feito com HTML, Bootstrap e JavaScript.</p>
+      </div>
+    </div>
+
+    <!-- Botão flutuante Voltar ao Topo (estilo referência) -->
+    <a href="#topo" class="back-to-top" aria-label="Voltar ao topo da página" title="Voltar ao topo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </a>
+  </footer>
+
+  <script src="js/catalog.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/success.js" defer></script>
+</body>
+
+</html>
